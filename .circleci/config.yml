@@ -47,6 +47,7 @@ jobs:
                      curl -O https://bootstrap.pypa.io/3.3/get-pip.py
                      python get-pip.py --user
                      pip install awscli --upgrade --user  
+                     echo "aws version++++++++++" 
                      aws --version
 
                   

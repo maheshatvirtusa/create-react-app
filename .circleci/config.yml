@@ -19,7 +19,7 @@ commands:
         steps:
             - run:
                   name: Install  dependencies
-                  command: |
+                  command: | 
                       npm install
             - run:
                   name: Install AWS CLI

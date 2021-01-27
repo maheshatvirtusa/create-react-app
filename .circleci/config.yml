@@ -43,8 +43,8 @@ jobs:
                   name: Install Serverless CLI and  dependencies
                   command: |
                      sudo apt-get update && sudo apt-get install -y python3
-                     curl -O https://bootstrap.pypa.io/get-pip.py
-                     python3 get-pip.py --user
+                     curl -O https://bootstrap.pypa.io/3.3/get-pip.py
+                     python get-pip.py --user
                      pip3 install awscli --upgrade --user  
                      aws --version
 

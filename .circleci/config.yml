@@ -42,24 +42,11 @@ jobs:
             - run:
                   name: Install Serverless CLI and  dependencies
                   command: |
-                      npm install
-           # - run:
-           #       name: Running linting and prettier checks
-           #       command: |
-           #           #npm run lint && echo "++Linting Completed++"            
-           #          # npm run prettier && echo "++Pretier run completed"
-           #
-            - run:
-                name: Setup Code Climate test-reporter
-                command: |
-                        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-                        chmod +x ./cc-test-reporter                    
-           
-            - store_test_results:
-                  path: ./coverage
-
-            - store_artifacts:
-                  path: ./coverage
+                      sudo apt-get update && sudo apt-get install -y python-dev
+                      curl -O https://bootstrap.pypa.io/get-pip.py
+                      sudo python get-pip.py
+                      sudo pip install awscli --upgrade  
+                      aws --version
 
                   
 workflows:
@@ -67,4 +54,3 @@ workflows:
     build_accept_deploy:
         jobs:
             - build
-            - s3_web_deploy
